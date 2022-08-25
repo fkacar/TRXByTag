@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss"
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "no-empty-source": null,
+    "color-hex-case": null,
+    "font-family-name-quotes": null,
+    "color-function-notation": null,
+    "indentation": null,
+    "string-quotes": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "selector-list-comma-newline-after": null,
+    "function-url-quotes": null,
+    "no-missing-end-of-source-newline": null,
+    "alpha-value-notation": null,
+    "color-hex-length": null,
+    "no-eol-whitespace": null,
+    "shorthand-property-no-redundant-values": null,
+    "comment-empty-line-before": null,
+    "property-no-vendor-prefix": null
+  }
+}

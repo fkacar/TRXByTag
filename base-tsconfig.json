@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "lib": [
+      "esnext",
+      "dom",
+      "es5",
+      "es6",
+      "dom.iterable"
+    ],
+    "paths": {
+      "@src/*": [ "./*"]
+    }
+  }
+}
