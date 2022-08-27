@@ -12,6 +12,8 @@
     "@types/react-dom": "^18.0.6",
     "antd": "^4.22.7",
     "bootstrap": "^5.2.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
     "firebase": "^9.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,9 +25,9 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "dotenv -e .env.development -e .env react-scripts start",
+    "build": "dotenv -e .env.production -e .env react-scripts build",
+    "test": "dotenv -e .env.development -e .env react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
