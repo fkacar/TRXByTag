@@ -9,14 +9,21 @@ export interface DefaultLayoutProps {
 const AuthLayout: FC<DefaultLayoutProps> = ({ children }) => {
   return (
     <>
-      <Container>
-        <Row>
-          <Col xs={7}>{children}</Col>
-          <Col xs={5}>
-            <SideBar />
-          </Col>
-        </Row>
-      </Container>
+      <main className="auth-layout-wrapper">
+        <Container fluid>
+          <Row>
+            <Col xs={7}>
+              <Container>{children}</Container>
+            </Col>
+            <Col
+              xs={5}
+              className="p-0"
+            >
+              <SideBar />
+            </Col>
+          </Row>
+        </Container>
+      </main>
     </>
   )
 }

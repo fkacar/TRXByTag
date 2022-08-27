@@ -1,0 +1,22 @@
+@import 'assets/styles/_core.scss';
+
+.login-wrapper {
+  height: calc(100vh);
+
+  & > .row {
+    height: calc(100vh);
+
+    .login-left-column-content {
+      min-width: 30rem;
+
+      & > h1 {
+        color: $base-text-color;
+        padding-bottom: 2rem;
+      }
+
+      .ant-input-affix-wrapper {
+        padding: 6.5px 11px !important;
+      }
+    }
+  }
+}
