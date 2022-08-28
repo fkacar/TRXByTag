@@ -1,22 +1,17 @@
 export default [
   {
-    key: 'home',
-    name: 'Anasayfa',
+    key: 'create',
+    name: 'Create a TRX',
     path: '/'
   },
   {
-    key: 'tasks',
-    name: 'Tasklar',
-    path: '/tasks'
-  },
-  {
-    key: 'login',
-    name: 'Giriş Yap',
-    path: '/login'
+    key: 'list',
+    name: 'TRX List',
+    path: '/list'
   },
   {
     key: 'logout',
-    name: 'Çıkış Yap',
+    name: 'Sign Out',
     path: '/logout'
   }
 ]

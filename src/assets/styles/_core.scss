@@ -1,4 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
 $base-text-color: #2F2E41;
+$base-link-color: #2F2E41;
+
+html {
+
+  * {
+    font-family: 'Lato', sans-serif;
+    color: $base-text-color;
+  }
+
+  a {
+    text-transform: none;
+    text-decoration: none;
+    color: #804FE8;
+  }
+
+  button.ant-btn {
+    &:not(.ant-btn-default) {
+      span {
+        color: #FFF;
+      }
+    }
+  }
+
+  .ant-btn-dangerous {
+    span {
+      color: #ff4d4f;
+    }
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+
+    &.auth {
+      position: absolute;
+    }
+  }
+
+  span.anticon.anticon-close {
+    & > svg {
+      margin-top: -0.3rem;
+    }
+  }
+}
 
 :export {
   baseTextColor: $base-text-color;

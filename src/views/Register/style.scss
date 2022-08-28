@@ -1,12 +1,10 @@
-@import 'assets/styles/_core.scss';
-
-.login-wrapper {
+.register-wrapper {
   height: calc(100vh);
 
   & > .row {
     height: calc(100vh);
 
-    .login-left-column-content {
+    .register-left-column-content {
       min-width: 30rem;
 
       & > h1 {

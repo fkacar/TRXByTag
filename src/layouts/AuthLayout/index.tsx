@@ -13,6 +13,7 @@ const AuthLayout: FC<DefaultLayoutProps> = ({ children }) => {
         <Container fluid>
           <Row>
             <Col xs={7}>
+              <div className="logo auth">TRXByTag</div>
               <Container>{children}</Container>
             </Col>
             <Col

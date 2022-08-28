@@ -24,17 +24,20 @@ const LayoutSwitcher: FC<ILayoutSwitcherProps> = ({ children }) => {
     if (!localStorage.trxAccessToken) {
       setLayout('auth')
 
-      if (currentPath() !== '/login') navigate('/login')
+      if (currentPath() !== '/login' && currentPath() !== '/sign-up') navigate('/login')
+
+      return
+    }
+
+    if ((currentPath() === '/login' || currentPath() === '/sign-up') && !!localStorage.trxAccessToken) {
+      setLayout('default')
+      navigate('/')
 
       return
     }
 
     setLayout('default')
   }
-
-  useEffect(() => {
-    console.log('layout', layout)
-  }, [layout])
 
   useEffect(() => {
     checkAuth()
