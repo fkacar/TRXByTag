@@ -7,6 +7,7 @@ import { fireErrorMessage, fireSuccessMessage } from 'utils/general'
 import { collection, query, where, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore'
 import { db } from 'firebase-config'
 import Swal from 'sweetalert2'
+import TrxBox from './TrxBox'
 import './style.scss'
 
 const { TextArea } = Input
@@ -26,13 +27,26 @@ const Home: FC = () => {
   const [newTagName, setNewTagName] = useState<string>('')
   const [currentlyEditingTagId, setCurrentlyEditingTagId] = useState<string>('')
   const [currentlyEditingTagName, setCurrentlyEditingTagName] = useState<string>('')
+  const [currentlyDraggingItem, setCurrentlyDraggingItem] = useState<any>({})
 
-  const onDragEnter = (e: any) => {
-    console.log('onDragEnter')
-  }
+  const onDragStart = (info: any) => {
+    const isTag = info.node.key.split('-').length === 2
+    const name = info.node.title
 
-  const onDrop = (e: any) => {
-    console.log('onDrop')
+    let tagId
+    if (isTag) tagId = tagsRawData.find((item: any) => item.name === info.node.title)?.id
+    if (!isTag) tagId = tagsRawData.find((item: any) => item.sentences.includes(info.node.title))?.id
+
+    if (isTag) {
+      info.event.preventDefault()
+      return
+    }
+
+    setCurrentlyDraggingItem({
+      tagId,
+      name,
+      isTag
+    })
   }
 
   const onRemoveTag = (e: any) => {
@@ -383,8 +397,7 @@ const Home: FC = () => {
                   onExpand={onExpand}
                   draggable
                   blockNode
-                  onDragEnter={onDragEnter}
-                  onDrop={onDrop}
+                  onDragStart={onDragStart}
                   treeData={data}
                   onRightClick={onRightClickOnTreeNode}
                 />
@@ -395,7 +408,15 @@ const Home: FC = () => {
             xs={12}
             md={6}
           >
-            <aside className="new-trx-box-wrapper">New TRX Area</aside>
+            <aside
+              style={{ height: '100%' }}
+              className="new-trx-box-wrapper"
+            >
+              <TrxBox
+                currentlyDraggingItem={currentlyDraggingItem}
+                onDrop={(e: any) => ''}
+              />
+            </aside>
           </Col>
         </Row>
         <Modal
