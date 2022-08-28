@@ -7,7 +7,12 @@ export default [
   {
     key: 'list',
     name: 'TRX List',
-    path: '/list'
+    path: '/transcripts'
+  },
+  {
+    key: 'organisation',
+    name: 'Organisation',
+    path: '/organisation'
   },
   {
     key: 'logout',
